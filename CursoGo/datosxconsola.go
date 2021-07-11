@@ -20,7 +20,7 @@ func main() {
 	fmt.Scanln(&text)
 	fmt.Println(text, numero1+numero2)
 
-	//Nota: utilizar la siuiente configuracion para mejores resultados
+	//Nota: utilizar la siguiente configuracion para mejores resultados
 	fmt.Println("Ingrese la descripcion 2 : ")
 	scanner := bufio.NewScanner(os.Stdin) //Standard In es el teclado del OS
 	if scanner.Scan() {
