@@ -17,7 +17,7 @@ func main() {
 	numero = -1
 
 	var numero2 int
-	numero3 := 4 // asignacion directa el compilaor asume el tipo de dato segun el valor asignado
+	numero3 := 4 // asignacion directa el compilador asume el tipo de dato segun el valor asignado
 	numero3 = 5
 	numero6, numero7, texto := 2, 4, "Hola Mundo"
 

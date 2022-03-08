@@ -22,7 +22,8 @@ func main() {
 	}
 
 	//SWITCH
-	switch numero := 5; numero {
+	//var numero = 5
+	switch numero := 5; numero { // puedo asigar el valor directamente en la firma del switch
 	case 1:
 		fmt.Println(1)
 	case 5:

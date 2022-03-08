@@ -15,6 +15,7 @@ func main() {
 		fmt.Print(i)
 		i++
 	}
+
 	fmt.Println()
 	for x := 1; x <= 10; x++ {
 		fmt.Print(x)
@@ -53,14 +54,14 @@ func main() {
 
 	var z = 0
 
-RUTINA:
+rutina: // puede ser caualquier nombre
 	fmt.Printf("Se devolvio a la rutina \n")
 
 	for z < 10 {
 		if z == 4 {
 			fmt.Printf("Le sumamos 2 y no debe mostrar el Valor de z: %d\n", z)
 			z = z + 2
-			goto RUTINA // A diferencia del continue este retorna al inicio de la rutina y no al for
+			goto rutina // A diferencia del continue este retorna al inicio de la rutina y no al for
 		}
 		fmt.Printf("Valor de z: %d\n", z)
 		z++
