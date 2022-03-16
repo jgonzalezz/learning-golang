@@ -9,7 +9,6 @@ import (
 
 // ESTRUCTURAS   (Son Muy Importantes en Go)
 // NO EXISTE la POO
-//
 
 type usuario1 struct {
 	Id        int
@@ -34,7 +33,6 @@ func main() {
 	u := new(pepe)
 	u.Telefono = "2343445"
 	u.AltaUsuario(1, "Pablo", time.Now(), true)
-
 	fmt.Println(u.Usuario, u.Telefono, u.Nombre)
 
 	// Sin herencia
