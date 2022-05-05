@@ -2,12 +2,17 @@ package main
 
 import "fmt"
 
+type SerVivo interface {
+	estaVivo() bool
+}
+
 // se definen los metodos que vamos usar para implementar la interface
 type humano interface {
 	respirar()
 	pensar()
 	comer()
 	sexo() string
+	estaVivo() bool
 }
 
 type animal interface {
@@ -24,6 +29,7 @@ type hombre struct {
 	pensando   bool
 	comiendo   bool
 	esHombre   bool
+	vivo       bool
 }
 
 type mujer struct {
@@ -43,6 +49,7 @@ func (h *hombre) sexo() string {
 		return "Mujer"
 	}
 }
+func (h *hombre) estaVivo() bool { return h.vivo }
 
 // en este metodo implemento un metodo de la interfaz
 func HumanosRespirando(hu humano) {
@@ -55,11 +62,13 @@ type perro struct {
 	respirando bool
 	comiendo   bool
 	carnivoro  bool
+	vivo       bool
 }
 
 func (p *perro) respirar()         { p.respirando = true }
 func (p *perro) comer()            { p.comiendo = true }
 func (p *perro) EsCarnivoro() bool { return p.carnivoro }
+func (p *perro) estaVivo() bool    { return p.vivo }
 
 func AnimalesRespirar(an animal) {
 	an.respirar()
@@ -72,6 +81,10 @@ func AnimalesCarnivoros(an animal) int {
 		return 1
 	}
 	return 0
+}
+
+func estoyVivo(v SerVivo) bool {
+	return v.estaVivo()
 }
 
 func main() {
@@ -93,6 +106,10 @@ func main() {
 	AnimalesRespirar(Dogo)
 	totalCarnivoros = +AnimalesCarnivoros(Dogo)
 
-	fmt.Printf("Total carnivoros %d", totalCarnivoros)
+	fmt.Println("Total carnivoros ", totalCarnivoros)
+
+	//Estoy vivo
+	Dogo.vivo = true
+	fmt.Println("Estoy Vivo Dogo", estoyVivo(Dogo))
 
 }
